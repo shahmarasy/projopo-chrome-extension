@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="js/angular.min.js"></script>
+
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+
+
+    <div class="wrapper">
+        <div class="header">
+            <p class="title">
+                PROJOPO Cryptocurrency News Check
+            </p>
+            <p class="setting">
+                <img src="images/icons/setting.png" alt="">
+            </p>
+        </div>
+        <div class="corver"></div>
+
+        <div class="content" ng-app="myApp" ng-controller="myCtrl">
+            <div class="post" ng-repeat="x in myData">
+                <div class="site">
+                    <div class="avata">
+                        <img src="images/icons/title.png" alt="">
+                    </div>
+                    <div class="siteTitle">
+                        {{x.source.title}}
+                    </div>
+                    <div class="siteAddress">
+                        <a href="http:/{{x.source.domain}}" target="_blank">{{x.source.domain}}</a>
+                    </div>
+                </div>
+                <div class="CList">
+                    <span ng-repeat="y in x.currencies" class="currencies">{{y.code}}</span>
+                </div>
+                <div class="PostTitle">
+                    {{x.title}}
+                </div>
+
+                <div class="rate">
+                    <div class="hot">
+                        {{x.votes.negative}}
+                    </div>
+                    <div class="up">
+                        {{x.votes.positive}}
+                    </div>
+                    <div class="warning">
+                        {{x.votes.important}}
+                    </div>
+                    <div class="star">
+                        {{x.votes.important}}
+                    </div>
+                    <div class="like">
+                        {{x.votes.liked}}
+                    </div>
+                    <div class="link">
+                        <b><a href="{{x.url}}" target="_blank">LINK</a></b>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

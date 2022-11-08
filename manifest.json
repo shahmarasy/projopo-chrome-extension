@@ -1,0 +1,32 @@
+{
+    "name": "Projopo",
+    "description": "Crypto Curency News Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "images/16.png",
+        "32": "images/32.png",
+        "48": "images/48.png"
+    },
+    "permissions": [
+        "tabs",
+        "bookmarks"
+    ],
+    "host_permissions": [
+        "http://www.blogger.com/",
+        "https://fonts.googleapis.com/",
+        "https://ajax.googleapis.com/"
+    ],
+    "optional_host_permissions": [
+        "*://*/*"
+    ],
+    "cross_origin_opener_policy": {
+        "value": "default-src https://cryptopanic.com/;"
+    }
+}
